@@ -23,10 +23,15 @@ class Dice_spiel:
                 f"Du hast eine {wurf} geworfen! \nDu hast {self.amount_of_roll} Würfe gemacht. \nDie Statistik der Würfe: {self.statistics}"
             )
             if wurf == 6:
+                self.reset_game()
                 print("Glückwunsch! Du hast gewonnen!")
                 break
             else:
                 print("Versuche es erneut!")
+
+    def reset_game(self):
+        self.amount_of_roll = 0
+        self.statistics = {i: 0 for i in range(self.min_wurf, self.max_wurf + 1)}
 
 
 if __name__ == "__main__":
