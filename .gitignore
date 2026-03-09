@@ -72,33 +72,3 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# --- Virtual Environments ---
-.venv/
-venv/
-ENV/
-
-# --- IDEs (VS Code, PyCharm) ---
-.vscode/
-.idea/
-*.swp
-*.swo
-.history/
-*.log
-
-# --- OS specific files ---
-.DS_Store
-.DS_Store?
-._*
-Thumbs.db
-desktop.ini
-
-# --- Project specific ---
-*.pdf
-files/*.pdf
-*jpeg
-*jpg
-*png
-*.csv
-*.xlsx
-*.zip
