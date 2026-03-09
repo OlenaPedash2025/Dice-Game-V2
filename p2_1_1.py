@@ -1,3 +1,4 @@
+import json
 import random
 
 
@@ -23,8 +24,8 @@ class Dice_spiel:
                 f"Du hast eine {wurf} geworfen! \nDu hast {self.amount_of_roll} Würfe gemacht. \nDie Statistik der Würfe: {self.statistics}"
             )
             if wurf == 6:
+                self.save_game()
                 self.reset_game()
-                print("Glückwunsch! Du hast gewonnen!")
                 break
             else:
                 print("Versuche es erneut!")
@@ -32,6 +33,19 @@ class Dice_spiel:
     def reset_game(self):
         self.amount_of_roll = 0
         self.statistics = {i: 0 for i in range(self.min_wurf, self.max_wurf + 1)}
+        print("Glückwunsch! Du hast gewonnen!")
+
+    def save_game(self, filename="dice_game_stats.json  "):
+        with open(filename, "w") as file:
+            json.dump(
+                {
+                    "amount_of_roll": self.amount_of_roll,
+                    "statistics": self.statistics,
+                },
+                file,
+                indent=4,
+            )
+        print(f"Spielstatistik wurde in {filename} gespeichert.")
 
 
 if __name__ == "__main__":

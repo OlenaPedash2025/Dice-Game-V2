@@ -42,6 +42,7 @@ Thumbs.db
 desktop.ini
 
 # --- Project specific ---
+*.json
 *.pdf
 files/*.pdf
 *jpeg
